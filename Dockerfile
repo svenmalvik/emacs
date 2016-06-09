@@ -8,5 +8,8 @@ RUN yum update -y && yum install -y epel-release
 RUN yum install -y emacs python-pip jq httpie docker-engine-1.11.2
 RUN pip install --upgrade pip
 RUN pip install docker-compose 
-COPY init.el /home/.emacs.d/
-CMD emacs -q -l /home/.emacs.d/init.el
+
+RUN mkdir /etc/emacs
+COPY init.el /etc/emacs/
+
+CMD emacs -q -l /etc/emacs/init.el
