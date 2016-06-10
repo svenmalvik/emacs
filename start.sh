@@ -1,3 +1,8 @@
 #!/bin/bash
 
-docker run -it --rm --name emacs -e HOSTNAME=$HOSTNAME -v $HOME:/home -v /var/run/docker.sock:/var/run/docker.sock svenmalvik/emacs $1
+docker run -it --rm --name emacs \
+  -e HOSTNAME=$HOSTNAME \
+  -v $HOME/.ssh:/root/.ssh \
+  -v $HOME/projects:/home/projects \
+  -v /var/run/docker.sock:/var/run/docker.sock \
+  svenmalvik/emacs $1

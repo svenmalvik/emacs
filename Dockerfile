@@ -11,5 +11,5 @@ RUN pip install docker-compose
 
 RUN mkdir /etc/emacs
 COPY init.el /etc/emacs/
-
+WORKDIR /home
 CMD emacs -q -l /etc/emacs/init.el
