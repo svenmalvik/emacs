@@ -19,6 +19,7 @@ RUN pip install docker-compose
 
 RUN mkdir /etc/emacs
 COPY init.el /etc/emacs/
+COPY dockerfile-mode.el /etc/emacs/
 
 WORKDIR /home
 
